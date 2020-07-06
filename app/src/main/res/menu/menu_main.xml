@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jeksonshar.shoppinglist.list.ShoppingListActivity">
+    <item
+        android:id="@+id/completed_purchases_menu"
+        android:orderInCategory="100"
+        android:title="@string/completed_purchases"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/uncompleted_purchases_menu"
+        android:orderInCategory="100"
+        android:title="@string/uncompleted_purchases"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/all_purchases_menu"
+        android:orderInCategory="100"
+        android:title="@string/all_purchases"
+        app:showAsAction="never" />
+
+</menu>

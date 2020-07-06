@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+    <string name="completed_purchases">Completed purchases</string>
+    <string name="uncompleted_purchases">Uncompleted purchases</string>
+    <string name="all_purchases">All purchases</string>
+    <string name="enter_a_title_for_the_purchase">Enter a title for the purchase</string>
+    <string name="enter_a_details_for_the_purchase">Enter a details for the purchase</string>
+    <string name="details_of_purchase">Details of purchase</string>
+    <string name="add_picture">add picture</string>
+    <string name="delete_picture">delete picture</string>
+    <string name="add_or_delete_a_picture">Add or delete a picture</string>
+    <string name="image_view_picture">Image view picture</string>
+    <string name="purchase_is_completed">Purchase is completed</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="delete_purchase">Delete</string>
+    <string name="are_you_sure_to_delete_purchase">Are you sure to delete purchase</string>
+    <string name="item_picture">Item Picture</string>
+
+</resources>
