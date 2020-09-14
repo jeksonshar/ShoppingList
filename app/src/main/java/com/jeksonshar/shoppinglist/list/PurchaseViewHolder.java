@@ -1,5 +1,6 @@
 package com.jeksonshar.shoppinglist.list;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
@@ -22,13 +23,16 @@ public class PurchaseViewHolder extends RecyclerView.ViewHolder {
     private final TextView detailsPurchaseView;
     private final CheckBox completedView;
 
+    private final Activity mActivity;
+
     private Purchase currentPurchase;
     private final PurchaseListAdapter.ItemEventsListener mListener;
 
-    public PurchaseViewHolder(@NonNull View itemView, PurchaseListAdapter.ItemEventsListener listener) {
+    public PurchaseViewHolder(@NonNull View itemView, PurchaseListAdapter.ItemEventsListener listener, Activity activity) {
         super(itemView);
 
         this.mListener = listener;
+        this.mActivity = activity;
 
         picturePurchaseView = itemView.findViewById(R.id.item_picture_view);
         titlePurchaseView = itemView.findViewById(R.id.item_title);
@@ -58,6 +62,7 @@ public class PurchaseViewHolder extends RecyclerView.ViewHolder {
                 return false;
             }
         };
+
         itemView.setOnLongClickListener(itemLongClickListener);
     }
 
@@ -67,7 +72,8 @@ public class PurchaseViewHolder extends RecyclerView.ViewHolder {
         if (currentPurchase.getPicturePurchase() != null) {
             File purchasePicture = new File(currentPurchase.getPicturePurchase());
             if (purchasePicture.exists()) {
-                Bitmap bitmap = BitmapFactory.decodeFile(purchasePicture.getAbsolutePath());
+//                Bitmap bitmap = BitmapFactory.decodeFile(purchasePicture.getPath());
+                Bitmap bitmap = PictureUtils.getScaledBitmap(purchasePicture.getPath(), mActivity);
                 picturePurchaseView.setImageBitmap(bitmap);
             }
         }

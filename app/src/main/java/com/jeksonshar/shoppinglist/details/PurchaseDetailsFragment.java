@@ -94,7 +94,7 @@ public class PurchaseDetailsFragment extends Fragment {
         picturePurchase = mPurchase.getPicturePurchase();
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED && picturePurchase != null) {
-                final File externalStorage = Environment.getExternalStorageDirectory();
+                final File externalStorage = Environment.getDataDirectory();
                 if (externalStorage != null) {
                     imageViewPicture.setImageBitmap(BitmapFactory.decodeFile(picturePurchase));
                 }
@@ -153,6 +153,15 @@ public class PurchaseDetailsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 deletePictureView();
+            }
+        });
+
+        imageViewPicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setDataAndType(Uri.parse("file://" + picturePurchase), "image/*");
+                startActivity(intent);
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.jeksonshar.shoppinglist.list;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,12 @@ public class PurchaseListAdapter extends RecyclerView.Adapter<PurchaseViewHolder
 
     private List<Purchase> mPurchaseList;
     private final ItemEventsListener mListener;
+    private Activity mActivity;
 
-    public PurchaseListAdapter(List<Purchase> purchaseList, ItemEventsListener listener) {
+    public PurchaseListAdapter(List<Purchase> purchaseList, ItemEventsListener listener, Activity activity) {
         mPurchaseList = purchaseList;
         mListener = listener;
+        mActivity = activity;
 
         setHasStableIds(true);
     }
@@ -39,7 +42,7 @@ public class PurchaseListAdapter extends RecyclerView.Adapter<PurchaseViewHolder
     public PurchaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.item_purchase, parent, false);
-        return new PurchaseViewHolder(itemView, mListener);
+        return new PurchaseViewHolder(itemView, mListener, mActivity);
     }
 
     @Override

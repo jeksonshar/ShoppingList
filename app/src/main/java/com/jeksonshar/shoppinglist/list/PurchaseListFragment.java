@@ -97,7 +97,7 @@ public class PurchaseListFragment extends Fragment {
             purchaseList = mRepository.getAllPurchase();
         }
 
-        mPurchaseListAdapter = new PurchaseListAdapter(purchaseList, mItemEventsListener);
+        mPurchaseListAdapter = new PurchaseListAdapter(purchaseList, mItemEventsListener, getActivity());
         mRecyclerView.setAdapter(mPurchaseListAdapter);
     }
 

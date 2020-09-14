@@ -40,13 +40,13 @@ public class Purchase {
         this.detail = detail;
     }
 
-    public String getPicturePurchase(){
-                            return picturePurchase;
-                }
+        public String getPicturePurchase(){
+               return picturePurchase;
+        }
 
-    public void setPicturePurchase(String picturePurchase) {
-           this.picturePurchase = picturePurchase;
-    }
+        public void setPicturePurchase(String picturePurchase) {
+               this.picturePurchase = picturePurchase;
+        }
 
     public boolean getComplete() {
         return completed;
